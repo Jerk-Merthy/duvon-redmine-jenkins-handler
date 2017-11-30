@@ -1,1 +1,1 @@
-# duvon-redmine-jenkins-handler
+# duvon/redmine/jenkins/handler
