@@ -7,7 +7,7 @@ Redmine::Plugin.register :rjc do
     description 'This plugin for Redmine to Jenkins integration'
     version '0.0.1'
     #url ''
-    author_url 'https://github.com/Pepperrs/red_jenkins'
+    author_url ''
 
     settings :default => {
         'rjc_server_url' => nil,
