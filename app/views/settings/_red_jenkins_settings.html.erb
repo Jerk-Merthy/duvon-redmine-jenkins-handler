@@ -1,0 +1,254 @@
+<!--
+ settings view for the red_jenkins plugin 
+-->
+<h2>Jenkins settings</h2>
+<table style="min-width:100%">
+  <tbody>
+    <tr>
+      <th style="min-width:15%">Server URL</th>
+      <td>
+        <input type="text" id="settings_rjc_server_url" 
+                           value="<%= settings['rjc_server_url'] %>" 
+                           name="settings[rjc_server_url]" >
+      </td><td>                    
+                           The full URL address of the Jenkins CI server (http/https). Username and password will be specified in these fields.
+                           Example: <i> https://example.org:port/jenkins </i>
+
+      </td>
+    </tr>
+    
+    <tr>
+      <th>Server IP</th>
+      <td>
+        <input type="text" id="settings_rjc_server_ip" 
+                           value="<%= settings['rjc_server_ip'] %>" 
+                           name="settings[rjc_server_ip]" >
+      </td><td>
+                           The IP address of the Jenkins CI server. (optional, required if Server URL is not set)
+      </td>
+    </tr>
+    <tr>
+      <th>Server port</th>
+      <td>
+        <input type="text" id="settings_rjc_server_port" 
+                           value="<%= settings['rjc_server_port'] %>" 
+                           name="settings[rjc_server_port]" >
+         </td><td>
+                           The port on which the Jenkins listens (optional, required if Server URL is not set)
+
+      </td>
+    </tr>
+    
+    <tr>
+      <th>Proxy IP</th>
+      <td>
+        <input type="text" id="settings_rjc_proxy_ip" 
+                           value="<%= settings['rjc_proxy_ip'] %>" 
+                           name="settings[rjc_proxy_ip]" >
+	</td><td>
+						   The proxy IP. (optional)
+      </td>
+    </tr>
+    <tr>
+      <th>Proxy port</th>
+      <td>
+        <input type="text" id="settings_rjc_proxy_port" 
+                           value="<%= settings['rjc_proxy_port'] %>" 
+                           name="settings[rjc_proxy_port]" >
+         </td><td>
+                           The proxy port. (optional)
+
+      </td>
+    </tr>
+    
+    <tr>
+      <th>Jenkins path</th>
+      <td>
+        <input type="text" id="settings_rjc_jenkins_path" 
+                           value="<%= settings['rjc_jenkins_path'] %>" 
+                           name="settings[rjc_jenkins_path]" >
+        </td><td>
+                           The context path for Jenkins. Example: <i> /jenkins/ </i> , default: <i> / </i>. (optional)
+
+      </td>
+    </tr>
+    
+    <tr>
+      <th>Username</th>
+      <td>
+        <input type="text" id="settings_rjc_unsername" 
+                           value="<%= settings['rjc_username'] %>" 
+                           name="settings[rjc_username]" >
+                 </td><td>
+                           The username used for connecting to the server. (optional, required for authentication)
+
+      </td>
+    </tr>
+    
+    <tr>
+      <th>Password</th>
+      <td>
+        <input type="password" id="settings_rjc_password" 
+                           value="<%= settings['rjc_password'] %>" 
+                           name="settings[rjc_password]" >
+                          </td><td>
+                           The password or API key for connecting to the CI server. (optional, required for authentication)
+
+
+      </td>
+    </tr>
+    
+<!--
+    <tr>
+      <th>Password base64</th>
+      <td>
+        <input type="text" id="settings_rjc_password_base64" 
+                           value="<%= settings['rjc_password_base64'] %>" 
+                           name="settings[rjc_password_base64]" >
+                           </td><td>
+                           the password with base64 encoded format for connecting to the CI server (optional)
+
+      </td>
+    </tr>
+-->
+    
+    <tr>
+      <th>Log location</th>
+      <td>
+        <input type="text" id="settings_rjc_log_location" 
+                           value="<%= settings['rjc_log_location'] %>" 
+                           name="settings[rjc_log_location]" >
+                           </td><td>
+                           The location for the log file on the local server. Permission to write in file are required. Example: <i> /var/log/logfile.log </i> (optional)
+                           
+      </td>
+    </tr>
+    
+    <tr>
+      <th>Log level</th>
+      <td>
+        <input type="text" id="settings_rjc_log_level" 
+                           value="<%= settings['rjc_log_level'].to_s %>" 
+                           name="settings[rjc_log_level]" >
+                           </td><td>
+                           The level for messages to be logged. Should be a number from 0 to 3.<br>
+                           Logger level: DEBUG (0), INFO (1), WARN/ERROR (2), FATAL (3)
+
+      </td>
+    </tr>
+    
+
+    <tr>
+      <th>Timeout</th>
+      <td>
+        <input type="text" id="settings_rjc_timeout" 
+                           value="<%= settings['rjc_timeout'].to_s %>" 
+                           name="settings[rjc_timeout]" >
+                           </td><td>
+                           This argument sets the timeout for operations that take longer. (in seconds) (optional)
+      </td>
+    </tr>
+    
+ <!--   
+    <tr>
+      <th>http_open_timeout</th>
+      <td>
+        <input type="text" id="settings_rjc_http_open_timeout" 
+                           value="<%= settings['rjc_http_open_timeout'].to_s %>" 
+                           name="settings[rjc_http_open_timeout]" >
+      </td>
+    </tr>
+    
+        <tr>
+      <th>http_read_timeout</th>
+      <td>
+        <input type="text" id="settings_rjc_http_read_timeout" 
+                           value="<%= settings['rjc_http_read_timeout'].to_s %>" 
+                           name="settings[rjc_http_read_timeout]" >
+      </td>
+    </tr> 
+-->
+    
+        <tr>
+      <th>SSL</th>
+      <td>
+        <%= check_box_tag "settings[rjc_ssl]", true, @settings[:rjc_ssl] %>
+        </td><td>
+        Indicates if Jenkins is accessible over HTTPS. Should only be set if HTTPS is specified in the URL.
+      </td>
+    </tr>
+    
+<!--
+        <tr>
+      <th>follow_redirects</th>
+      <td>
+        <%= check_box_tag "settings[rjc_follow_redirects]", true, @settings[:rjc_follow_redirects] %>
+        </td><td>
+        This argument causes the client to follow a redirect (jenkins can return a 30x when starting a build).
+
+      </td>
+    </tr>
+-->
+    
+        <tr>
+      <th>Identity file</th>
+      <td>
+        <input type="text" id="settings_rjc_identity_file" 
+                           value="<%= settings['rjc_identity_file'] %>" 
+                           name="settings[rjc_identity_file]" >
+                 </td><td>
+                           The private key file for Jenkins CLI authentication, it is used only for executing CLI commands.
+                           Also remember to upload the public key to &lt;Server IP&gt;:&lt;Server Port&gt;/user/&lt;Username&gt;/configure. 
+                           Using this will override username/password settings.
+
+      </td>
+    </tr>
+    
+<!--
+        <tr>
+      <th>cookies</th>
+      <td>
+        <input type="text" id="settings_rjc_cookies" 
+                           value="<%= settings['rjc_cookies'] %>" 
+                           name="settings[rjc_cookies]" >
+                          </td><td>
+                           Cookies to be sent with all requests in the format: name=value; name2=value2
+      </td>
+    </tr>
+-->
+      
+  </tbody>
+</table>
+<p></p>
+<hr></hr>
+<h2>Assign Jenkins jobs to projects</h2>
+Specify Jenkins jobs to a project by adding them seperated by a <i>;</i> (semicolon). Jenkins is a contineous integration sever, its jobs are build tasks within Jenkins.
+It tests the assigned testcases, but it do not check the git version. Example for adding jobs: <i> job1;job2;job3 </i>
+ <table style="min-width:100%">
+  <tbody>
+    
+	
+<% 
+  projects = Project.all
+  projects.each do |p|
+  temp = p.identifier
+ %> 
+		<tr>
+		<th style="min-width:15%">
+			<%= temp%>
+		</th>
+		<td>
+        <input type="text" id="settings_rjc_<%= temp%>" 
+                           value="<%= settings["rjc_#{temp}"] %>" 
+                           name="settings[rjc_<%= temp%>]" >
+                           
+		</td>
+		</tr>
+  <%end%>	
+	
+		
+    
+    
+    
+  </tbody>
+</table>
