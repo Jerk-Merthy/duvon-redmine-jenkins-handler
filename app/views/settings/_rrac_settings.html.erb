@@ -1,36 +1,35 @@
-<!--
- settings view for the RRAC plugin 
--->
+<!-- settings view for the RRAC plugin -->
 <h2>RRAC settings</h2>
 <table style="min-width:100%">
-  <tbody>
-    <tr>
-      <th style="min-width:15%">
-          Resources
-      </th>
-      <td>
-          <input type="text" id="settings_rrac_resources" 
-                             value="<%= settings['rrac_resources'] %>" 
-                             name="settings[rrac_resources]" >
-      </td>
-      <td>                    
-          List of user resources in format "<name>: <host>:<port>/<endpoint> [<user>/<password>]"
-      </td>
-    </tr>
-    <tr>
-      <th style="min-width:15%">
-          Resources
-      </th>
-      <td>
-          <input type="text" id="settings_rrac_actions"
-                             value="<%= settings['rrac_actions'] %>"
-                             name="settings[rrac_actions]" >
-      </td>
-      <td>
-          List of user resources in format "name: <resource>: [<parameter>: <value ref> [, <parameter>: <value ref>]...]
-          You can user references to Issue, User and Project as variables
-      </td>
-    </tr>
-
+    <tbody>
+        <tr>
+            <th style="min-width:15%">
+                Resources
+            </th>
+            <td>
+                <input type="text"
+                       id="settings_rrac_resources" 
+                       value="<%= settings['rrac_resources'] %>" 
+                       name="settings[rrac_resources]" >
+            </td>
+            <td>                    
+                List of user resources in format "<name>: <host>:<port>/<endpoint> [<user>/<password>]"
+            </td>
+        </tr>
+        <tr>
+            <th style="min-width:15%">
+                Actions
+            </th>
+            <td>
+                <input type="text"
+                       id="settings_rrac_actions"
+                       value="<%= settings['rrac_actions'] %>"
+                       name="settings[rrac_actions]" >
+            </td>
+            <td>
+                List of user resources in format "name: <resource>: [<parameter>: <value ref> [, <parameter>: <value ref>]...]
+                You can user references to Issue, User and Project as variables
+            </td>
+        </tr>
   </tbody>
 </table>

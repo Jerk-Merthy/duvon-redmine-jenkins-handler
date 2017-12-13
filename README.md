@@ -1,1 +1,1 @@
-# rrac
+# redmine_rrac
