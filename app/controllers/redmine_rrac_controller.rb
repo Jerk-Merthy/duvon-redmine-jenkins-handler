@@ -12,7 +12,7 @@ class JenkinshandlerController < ApplicationController
             @rrac_settings[:actions] = nil
         else
             # transform to array of turples
-        @rrac_settings[:actions] = Setting.plugin_rrac['rrac_actions'].to_s
+            @rrac_settings[:actions] = Setting.plugin_rrac['rrac_actions'].to_s
         end
     end
 end

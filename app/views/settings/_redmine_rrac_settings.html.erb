@@ -9,10 +9,10 @@
                 Resources
             </th>
             <td>
-                <input type="text"
-                       id="settings_rrac_resources" 
-                       value="<%= settings['rrac_resources'] %>" 
-                       name="settings[rrac_resources]" >
+                <textarea id="settings_redmine_rrac_resources" 
+                          name="settings[redmine_rrac_resources]">
+                    <%= settings['redmine_rrac_resources'] %>
+                </textarea>
             </td>
             <td>                    
                 List of user resources in format "&lt;name>: &lt;host&gt;:&lt;port&gt;/&lt;endpoint&gt; [&lt;user&gt;/&lt;password&gt;]"
@@ -23,10 +23,10 @@
                 Actions
             </th>
             <td>
-                <input type="text"
-                       id="settings_rrac_actions"
-                       value="<%= settings['rrac_actions'] %>"
-                       name="settings[rrac_actions]" >
+                <textarea id="settings_redmine_rrac_actions"
+                          name="settings[redmine_rrac_actions]" >
+                    <%= settings['redmine_rrac_actions'] %>
+                </textarea>
             </td>
             <td>
                 List of user resources in format "name: &lt;resource&gt;: [&lt;parameter&gt;: &lt;value ref&gt; [, &lt;parameter&gt;: &lt;value ref&gt;]...]
