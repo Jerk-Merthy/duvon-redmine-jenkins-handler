@@ -1,7 +1,7 @@
 require 'redmine'
 require_dependency 'redmine_rrac/hooks/hooks'
 
-Redmine::Plugin.register :rrac do
+Redmine::Plugin.register :redmine_rrac do
     name 'Redmine RRAC'
     author 'Jerk Merthy'
     description 'This plugin for Redmine integration with any service having REST API'
